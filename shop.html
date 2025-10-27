@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="./sass/main.css">
+    <title>Магазин</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <div class="main">
+                <header class="header">
+                    <div class="header__container container">
+                        <div class="header__logo">
+                            <img class="logo__icon" src="img.svg/logo.svg" alt="">
+                            <span class="logo__title">М'ясна лавка</span>
+                        </div>
+                        <div class="header__navbar">
+                            <ul class="header__menu">
+                                <li class="menu__item mainPage">Головна</li>
+                                <li class="menu__item shopPage"> Магазин</li>
+                                <li class="menu__item deliveryPage">Доставка</li>
+                                <li class="menu__item aboutPage">Про нас</li>
+                                <li class="menu__item reviewsPage">Відгуки</li>
+                            </ul>
+                            <div class="shop-cart-wrapper">
+                                <span class="shop-cart-text">Кошик</span>
+                                <img class="shop-cart" src="img.svg/shopping-cart.svg" alt="">
+                                <div class="shop-cart-counter"></div>
+                            </div>
+                            <div class="reg">
+                                <img class="reg__icon" src="img.svg/reg-icon.svg" alt="">
+                                <span class="reg__text">Вхід / Реєстрація</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="main__container container">
+                    <div class="filter">
+                        <div class="filter__header">
+                            <span class="filter__header-item">Фільтр</span>
+                            <span class="filter__header-item" id="reset-filter">Скинути всі</span>
+                        </div>
+                        <div class="filter__kind">
+                            <div class="filter__title" id="filter__title-kind">
+                                <span class="filter__name">Вид</span>
+                                <span class="plus-minus-icon" id="plus-minus-icon__kind">
+                                    <span class="h-line"></span>
+                                    <span class="v-line" id="v-line__kind"></span>
+                                </span>
+                            </div>
+                            <div class="filter__container container">
+                                <form class="radio-form" id="filter__kind-form" action="">
+                                    <label for="radio1" class="radio">
+                                        <input type="radio" id="radio1" value="Свинина" name="kind"
+                                            class="radio__input">
+                                        <div class="radio__div"></div>
+                                        Свинина
+                                    </label>
+                                    <label for="radio2" class="radio">
+                                        <input type="radio" id="radio2" value="Яловичина" name="kind"
+                                            class="radio__input">
+                                        <div class="radio__div"></div>
+                                        Яловичина
+                                    </label>
+                                    <label for="radio3" class="radio">
+                                        <input type="radio" id="radio3" value="Баранина" name="kind"
+                                            class="radio__input">
+                                        <div class="radio__div"></div>
+                                        Баранина
+                                    </label>
+                                    <label for="radio4" class="radio">
+                                        <input type="radio" id="radio4" value="Курка" name="kind" class="radio__input">
+                                        <div class="radio__div"></div>
+                                        Курка
+                                    </label>
+                                    <label for="radio5" class="radio">
+                                        <input type="radio" id="radio5" value="Кролятина" name="kind" class="radio__input">
+                                        <div class="radio__div"></div>
+                                        Кролик
+                                    </label>
+                                    <label for="radio6" class="radio">
+                                        <input type="radio" id="radio6" value="Індичка" name="kind"
+                                            class="radio__input">
+                                        <div class="radio__div"></div>
+                                        Індичка
+                                    </label>
+                                    <label for="radio7" class="radio">
+                                        <input type="radio" id="radio7" value="Гусак" name="kind" class="radio__input">
+                                        <div class="radio__div"></div>
+                                        Гусь
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="filter__price">
+                            <div class="filter__title" id="filter__title-price">
+                                <span class="filter__name">Ціна</span>
+                                <span class="plus-minus-icon" id="plus-minus-icon__price">
+                                    <span class="h-line"></span>
+                                    <span class="v-line" id="v-line__price"></span>
+                                </span>
+                            </div>
+
+                            <div class="filter__container container">
+                                <form class="price__form" id="filter__price-form" action="">
+                                    <span class="price__input-wrap">
+                                        <input class="price__input price__input--min" type="number" name="" id=""
+                                            value="0">
+                                        <label class="price__label">₴</label>
+                                    </span>
+                                    <span class="price__input-wrap">
+                                        <input class="price__input price__input--max" type="number" name="" id=""
+                                            value="1000">
+                                        <label class="price__label">₴</label>
+                                    </span>
+
+                                    <div class="range__slider">
+                                        <div class="progress"></div>
+                                    </div>
+                                    <div class="range__input">
+                                        <input type="range" class="range-min" min="0" max="1000" value="0" step="10">
+                                        <input type="range" class="range-max" min="0" max="1000" value="1000" step="10">
+                                    </div>
+
+                                    <div class="radio-form radio-form--price">
+                                        <label for="radio8" class="radio">
+                                            <input type="radio" id="radio8" value="Роздріб" name="sellType"
+                                                class="radio__input">
+                                            <div class="radio__div"></div>
+                                            Роздріб
+                                        </label>
+                                        <label for="radio9" class="radio">
+                                            <input type="radio" id="radio9" value="Опт" name="sellType"
+                                                class="radio__input">
+                                            <div class="radio__div"></div>
+                                            Оптом
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="filter__prod">
+                            <div class="filter__title" id="filter__title-prod">
+                                <span class="filter__name">Виробництво м'яса</span>
+                                <span class="plus-minus-icon" id="plus-minus-icon__prod">
+                                    <span class="h-line"></span>
+                                    <span class="v-line" id="v-line__prod"></span>
+                                </span>
+                            </div>
+
+                            <div class="filter__container container">
+                                <form class="prod__form" id="filter__prod-form" action="">
+                                    <label for="radio10" class="radio">
+                                        <input type="radio" id="radio10" value="домашнє виробництво" name="production"
+                                            class="radio__input">
+                                        <div class="radio__div"></div>
+                                        Домашні
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="categories">
+                        <div class="header__menu-icon">
+                            <label class="burger__icon" for="check">
+                                <input type="checkbox" id="check" />
+                                <span class="burger-line red"></span>
+                                <span class="burger-line red"></span>
+                                <span class="burger-line red"></span>
+                            </label>
+                        </div>
+                        <div class="categories__header">
+                            <span class="categories__title">Категорії товарів</span>
+                        </div>
+
+                        <div class="modal" id="modal-scheme">
+                            <div class="modal__dialog">
+                                <img class="close-icon" id="modal-close" src="img.svg/close.svg" alt="">
+                                <img class="scheme-img" src="img.jpg/scheme.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <form class="search">
+                            <input class="search__input" type="text" id="search-input" placeholder="Пошук товарів">
+                            <img class="search__icon" src="img.svg/magnifying-glass.svg" alt="">
+                            <img class="clear__icon" src="img.svg/delete.svg" alt="">
+                            <button class="search__btn" id="search-btn" type="button">
+                                Пошук
+                                <img src="img.svg/search-right-arrow.svg" alt="">
+                            </button>
+                        </form>
+
+                        <div class="categories__main">
+                            <div class="categories__products" id="products-container">
+
+                            </div>
+                            <div class="categories__pagination" id="pagination">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer mt">
+            <header class="header header--footer">
+                <div class="header__container container">
+                    <div class="header__logo">
+                        <img class="logo__icon" src="img.svg/logo.svg" alt="">
+                        <span class="logo__title">М'ясна лавка</span>
+                    </div>
+                    <div class="header__navbar">
+                        <ul class="header__menu">
+                            <li class="menu__item menu__item--footer mainPage">Головна</li>
+                            <li class="menu__item menu__item--footer shopPage">Магазин</li>
+                            <li class="menu__item menu__item--footer deliveryPage">Доставка</li>
+                            <li class="menu__item menu__item--footer aboutPage"> Про нас</li>
+                            <li class="menu__item menu__item--footer reviewsPage">ВІдгуки</li>
+                        </ul>
+                    </div>
+
+                    <div class="reg">
+                        <img class="reg__icon" src="img.svg/reg-icon.svg" alt="">
+                        <span class="reg__text">Вхід / Реєстрація</span>
+                    </div>
+
+                    <div class="header__menu-icon">
+                        <div class="menu__bar1"></div>
+                        <div class="menu__bar2"></div>
+                        <div class="menu__bar3"></div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="footer__main">
+                <div class="footer__container container">
+                    <div class="footer__content">
+                        <div class="footer__shop-cart">
+                            <img class="shop-cart shop-cart--icon" src="img.svg/shopping-cart.svg" alt="">
+                            <div class="shop-cart-counter shop-cart-counter--ftr"></div>
+                            <span>Кошик</span>
+                        </div>
+                        <div class="footer__location">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2634.5877662189773!2d26.58450077674773!3d48.67512611358553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4733b870b4cc2db9%3A0xec7f98095857e3f2!2z0LLRg9C70LjRhtGPINCe0LPRltGU0L3QutCwLCA2MSwg0JrQsNC8J9GP0L3QtdGG0Ywt0J_QvtC00ZbQu9GM0YHRjNC60LjQuSwg0KXQvNC10LvRjNC90LjRhtGM0LrQsCDQvtCx0LvQsNGB0YLRjCwg0KPQutGA0LDRl9C90LAsIDMyMzAx!5e0!3m2!1suk!2sde!4v1761062436028!5m2!1suk!2sde" 
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="footer__info">
+                            <div class="footer__schedule">
+                                Графік роботи:
+                                <ul class="schedule__list">
+                                    <li>Понеділок: <span class="red-text">Вихідний</span></li>
+                                    <li>Вівторок-Субота: <span class="red-text">09:00 - 20:00</span></li>
+                                    <li>Неділя: <span class="red-text">09:00 - 19:00</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="footer__numbers">
+                                <img class="phone-icon" src="img.svg/telephone.svg" alt="">
+
+                                <ul class="phone-numbers">
+                                    <li>
+                                        <a href="tel:123-456-7890" class="phone-number">+1 234 567 890</a>
+                                    </li>
+                                    <li>
+                                        <a href="tel:123-456-7890" class="phone-number">+1 234 567 890</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="footer__address">
+                                <img class="address-icon" src="img.svg/map.svg" alt="">
+                                <span class="address-text">
+                                    вулиця Огієнка, 61, Кам'янець-Подільський, Хмельницька область, Україна, 32301
+                                </span>
+                            </div>
+
+                            <div class="footer__socials">
+                                <img class="socials__icon" src="img.svg/yt.svg" alt="">
+                                <img class="socials__icon" src="img.svg/fb.svg" alt="">
+                                <img class="socials__icon" src="img.svg/insta.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <a class="anchor">
+            <img class="anchor-icon" src="img.png/anchor.png" alt="">
+        </a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/productsData.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+
+</html>

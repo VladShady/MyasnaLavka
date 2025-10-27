@@ -1,0 +1,2003 @@
+@import "nullStyles.sass"
+@import "vars.sass"
+@import "fonts.sass"
+
+*
+    margin: 0
+    padding: 0
+
+html,
+body
+    height: 100%
+
+    &.no-scroll
+        overflow: hidden
+
+.wrapper
+    display: flex
+    flex-direction: column
+    min-height: 100%
+
+.content
+    flex: 1 0 auto
+
+.header
+    background: rgba(0, 0, 0, 0.75)
+    font-size: 16px
+    position: relative
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+    &__user
+        display: flex
+
+    &__container
+        max-width: 1170px
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &__logo
+        display: flex
+        align-items: center
+        margin-right: 60px
+
+        &.second
+            display: none
+            position: absolute
+            top: 10px
+            left: 20px
+
+        &:hover
+            cursor: pointer
+
+    &--footer
+        position: relative
+        display: flex
+        align-items: center
+        height: 94px
+        box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.3)
+        background-color: #2B2B2B
+        // padding-bottom: 9px
+
+        .menu__item
+            &:hover
+                &::after
+                    width: 0
+
+    &__navbar
+        display: flex
+        align-items: center
+
+    &__menu
+        display: flex
+
+        &-icon
+            position: absolute
+            top: 5px
+            right: 0px
+            display: none
+            cursor: pointer
+            transform: scale(0.6)
+
+.menu__bar1, .menu__bar2, .menu__bar3
+    width: 35px
+    height: 5px
+    background-color: #ffffff
+    margin: 6px 0
+    transition: 0.4s
+    border-radius: 10px
+
+.menu__bar2
+    width: 17px
+
+.logo
+    &__icon
+        padding-top: 7px
+        height: 75px
+        margin-right: 10px
+        margin-bottom: 10px
+
+        &:hover
+            cursor: pointer
+
+    &__title
+        font-family: "HelveticaNeueCyrBold"
+        font-size: 18px
+        text-transform: uppercase
+        color: $white
+        letter-spacing: 0.06em
+
+        &:hover
+            cursor: pointer
+
+.menu__item
+    font-family: "HelveticaNeueCyrMedium"
+    color: $white
+    margin-right: 27px
+    letter-spacing: 0.06em
+    transition: color 0.5s ease
+
+    &.active
+        color: $red
+
+        &::after
+            width: 70%
+            background: $red
+            border-radius: 10px
+
+    &::after
+        content: ''
+        display: block
+        height: 3px
+        width: 0
+        background: transparent
+        transition: width 0.5s ease, background-color 0.5s ease
+
+    &:hover
+        color: $red
+        cursor: pointer
+        &::after
+            width: 70%
+            background: $red
+            border-radius: 10px
+
+    &:last-child
+        margin-right: 16px
+
+    &--footer
+        &:last-child
+            margin-right: 40px
+
+        &::after
+            display: none
+
+.shop-cart
+    margin-right: 23px
+
+    &-wrapper
+        display: flex
+
+    &-text
+        display: none
+
+    &-counter
+        position: absolute
+        background-color: $white
+        font-size: 12px
+        font-family: "HelveticaNeueCyrMedium"
+        color: $red
+        width: 14px
+        height: 14px
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        transform: translate(25px, -6px)
+
+        &--ftr
+            width: 28px
+            height: 28px
+            font-size: 16px
+            transform: translate(-8px, -29px)
+
+    &__btn
+        margin-right: 0
+        height: 17px
+        width: 17px
+        margin-left: 10px
+        transition: filter 0.2s linear
+
+    &--icon
+        height: 64px
+        width: 64px
+        margin-right: 13px
+        margin-left: 0
+
+
+    &:hover
+        cursor: pointer
+
+    &:hover
+        cursor: pointer
+
+.reg
+    display: flex
+    align-items: center
+
+    &:hover
+        cursor: pointer
+
+    &__icon
+        height: 37px
+        width: 37px
+        margin-right: 8px
+
+    &__text
+        font-family: "HelveticaNeueCyrBold"
+        letter-spacing: 0.06em
+        color: $white
+
+.intro
+    background: url("../img.jpg/header-bg.jpg") center no-repeat
+    background-size: cover
+    text-align: center
+    margin-bottom: 70px
+
+    &__title
+        font-family: "Gecko"
+        color: $white
+        margin-top: 100px
+        margin-bottom: 110px
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+
+    &__btn
+        font-size: 18px
+        font-family: "HelveticaNeueCyrBold"
+        letter-spacing: 0.06em
+        width: 292px
+        height: 62px
+        background-color: $red
+        color: $white
+        text-transform: uppercase
+        border-radius: 5px
+        margin-bottom: 66px
+
+        transition: background-color 0.2s linear
+
+        &:hover
+            background-color: $hover-red-btn
+            color: $white
+            border-color: $red
+
+.title__top
+    font-size: 98px
+    letter-spacing: 0.06em
+    height: 125px
+
+.title__bottom
+    font-size: 70px
+    letter-spacing: 0.06em
+
+.scroll-down
+    margin: 0 auto
+    padding-bottom: 15px
+
+    &:hover
+        cursor: pointer
+
+.anchor
+    position: fixed
+    display: flex
+    align-items: center
+    justify-content: center
+    bottom: 20px
+    right: 20px
+    background-color: #cfcfcf
+    width: 75px
+    height: 75px
+    border-radius: 50%
+    opacity: 0
+    z-index: 1000
+
+    transition: opacity 0.2s linear, background-color 0.2s linear
+
+    &.show
+        opacity: 1
+
+    &:hover
+        cursor: pointer
+        background-color: $grey
+
+.anchor-icon
+    height: 45px
+    width: 45px
+
+.cats
+    text-align: center
+    margin-bottom: 120px
+
+    &__container
+        max-width: 1170px
+
+    &__block
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+
+    &__item
+        width: 270px
+        height: 236px
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25)
+        border-radius: 30px
+        padding: 17px
+        margin-bottom: 44px
+
+        transition: box-shadow 0.5s linear
+
+        &:hover
+            box-shadow: 0px 4px 20px rgba(205, 2, 0, 0.7)
+            cursor: pointer
+
+        &-img
+            height: 115px
+            margin: 0 auto
+
+        &-name
+            font-family: "HelveticaNeueCyrBold"
+            font-size: 36px
+            text-transform: uppercase
+            color: $dark-red
+            line-height: 1
+
+
+    &__title
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 36px
+        margin-bottom: 70px
+        letter-spacing: 0.06em
+
+        &::after
+            content: ""
+            width: 177px
+            height: 5px
+            background-color: $red
+            display: block
+            margin: 15px auto 0
+            border-radius: 30px
+
+.single-word
+    margin-top: 17px
+
+.black-text
+    color: $black
+    font-size: 25px
+
+.products
+    text-align: center
+    margin-bottom: 106px
+
+    &__container
+        max-width: 1170px
+
+    &__title
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 36px
+        margin-bottom: 70px
+        letter-spacing: 0.06em
+
+        &::after
+            content: ""
+            width: 177px
+            height: 5px
+            background-color: $red
+            display: block
+            margin: 15px auto 0
+            border-radius: 30px
+
+    &__list
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+
+    &__item
+        position: relative
+        width: 270px
+        height: 392px
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25)
+        border-radius: 4px
+
+        margin-bottom: 63px
+
+        &.new-hide
+            .new-marker
+                display: none
+
+        &-img
+            height: 245px
+            width: 270px
+            cursor: pointer
+
+        &-name
+            font-family: "HelveticaNeueCyrMedium"
+            font-size: 18px
+            color: $black
+            letter-spacing: 0.1em
+            margin: 15px 0 10px
+            text-align: center
+
+        &-text
+            font-family: "HelveticaNeueCyr"
+            font-size: 14px
+            color: $grey
+            padding: 0 17px
+            letter-spacing: 0.06em
+            text-align: center
+
+        &-order
+            position: inherit
+            display: flex
+            justify-content: space-between
+            bottom: -10px
+            max-width: 236px
+            height: 42px
+            margin: 0 auto
+            border: 1px solid #E5E5E5
+            background-color: $white
+            box-sizing: border-box
+            align-items: center
+            border-radius: 4px
+            box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25)
+
+        &-price
+            font-family: 'HelveticaNeueCyr'
+            font-size: 18px
+            width: 87px
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            color: $red
+            box-sizing: border-box
+            border-radius: 4px 0px 0px 4px
+            border: 1px solid #E5E5E5
+
+        &-btn
+            font-family: 'HelveticaNeueCyr'
+            font-size: 18px
+            width: 149px
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            background-color: $white
+            color: $red
+            border-radius: 0px 4px 4px 0px
+            border: 1px solid #E5E5E5
+            box-sizing: border-box
+            letter-spacing: 0.06em
+
+            transition: background-color 0.2s linear, color 0.2s linear, border-color 0.2s linear
+
+            &:hover
+                background-color: #E80806
+                color: $white
+                border-color: $red
+
+                .shop-cart__btn
+                    filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(199deg) brightness(107%) contrast(102%)
+
+   
+    &__show-more
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 18px
+        color: $white
+        background-color: $red
+        width: 235px
+        height: 50px
+        border-radius: 6px
+        letter-spacing: 0.06em
+        margin-top: 108px
+
+        transition: background-color 0.2s linear
+
+        &:hover
+            background-color: $hover-red-btn
+
+        &.hide
+            display: none
+
+.new-marker
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    top: 17px
+    right: 16px
+    background-color: $red-btn
+    color: $white
+    width: 59px
+    height: 26px
+    border-radius: 15px
+    font-size: 14px
+    font-family: "HelveticaNeueCyrMedium"
+    letter-spacing: 0.06em
+
+.footer
+    flex: 0 0 auto
+    background-color: $dark-grey
+
+    &.mt
+        margin-top: 50px
+
+    &__container
+        max-width: 1170px
+
+    &__main
+        margin-top: 111px
+        padding-bottom: 108px
+
+    &__content
+        display: flex
+        position: relative
+
+    &__shop-cart
+        width: 223px
+        height: 223px
+        background-color: #414141
+        box-shadow: 0px 2px 55px rgba(0, 0, 0, 0.25)
+        border-radius: 50%
+        position: absolute
+        right: -5px
+        top: -70px
+        display: flex
+        font-size: 16px
+        font-family: "HelveticaNeueCyrMedium"
+        color: $white
+        justify-content: center
+        align-items: center
+        letter-spacing: 0.06em
+
+        span
+            &:hover
+                cursor: pointer
+
+    &__info
+        margin-left: 27px
+
+    &__schedule
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 16px
+        color: $white
+        letter-spacing: 0.06em
+        line-height: 2
+        margin-bottom: 22px
+
+    &__numbers
+        display: flex
+
+    &__address
+        display: flex
+        margin-top: 35px
+        margin-bottom: 60px
+
+    &__socials
+        display: flex
+        justify-content: space-between
+        padding: 38px 55px 0
+        border-top: 1px solid #595959
+
+    &__location
+        filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.5))
+
+.google__map
+    width: 670px
+    height: 450px
+
+.map-img
+    min-width: 670px
+    height: 450px
+
+.red-text
+    color: $red
+
+.phone-icon
+    width: 23px
+    height: 23px
+    transform: translateY(3px)
+    margin-right: 10px
+
+.phone-numbers
+    list-style: none
+
+.phone-number
+    color: $white
+    font-family: 'HelveticaNeueCyrMedium'
+    font-size: 16px
+    letter-spacing: 0.06em
+    text-decoration: none
+
+    &:hover
+        color: $white
+
+.address-icon
+    height: 28px
+    width: 28px
+    margin-right: 16px
+    transform: translateY(-4px)
+
+.address-text
+    color: $white
+    font-size: 16px
+    font-family: "HelveticaNeueCyrMedium"
+    letter-spacing: 0.06em
+    line-height: 1.7
+
+.socials__icon
+    transition: transform 0.2s linear
+    &:hover
+        transform: translateY(-5px)
+        cursor: pointer
+
+.slider
+    position: relative
+    background: url("../img.jpg/slider-bg.jpg") center no-repeat
+    background-size: 100% 110%
+    padding-top: 22px
+    padding-bottom: 35px
+    filter: drop-shadow(0px 10px 7px rgba(0,0,0,0.65))
+    z-index: 1
+
+    &__container
+        max-width: 1170px
+
+    &__slide
+        display: flex
+        align-items: center
+        height: 540px
+
+    &__text
+        font-size: 36px
+        font-family: "HelveticaNeueCyrMedium"
+        color: $white
+        text-align: center
+        text-shadow: 0px 5px 24px #000000
+        letter-spacing: 0.05em
+        line-height: 38px
+        margin-right: 30px
+
+    &__img
+        width: 668px
+        height: 494px
+        box-shadow: -1px 15px 25px -4px rgba(0, 0, 0, 0.4)
+        border-radius: 10px
+
+.slick-arrow
+    position: absolute
+    z-index: 10
+    bottom: 4%
+    font-size: 0
+    width: 46px
+    height: 40px
+
+.slick-prev
+    left: 39%
+    background: url("../img.svg/left-arrow.svg") 0 0 / 100% no-repeat
+
+.slick-next
+    right: 39%
+    background: url("../img.svg/right-arrow.svg") 0 0 / 100% no-repeat
+
+.slick-list
+    overflow: hidden
+
+.slick-track
+    display: flex
+
+.slick-dots
+    display: flex
+    align-items: center
+    justify-content: center
+
+    li
+        list-style: none
+        margin-right: 20px
+        margin-top: 30px
+
+        &:last-child
+            margin-right: 0
+
+        &.slick-active
+            button
+                background-color: $red
+
+    button
+        font-size: 0
+        width: 15px
+        height: 15px
+        background-color: $white
+        border-radius: 50%
+        box-shadow: inset 0px 3px 2px rgba(0, 0, 0, 0.55)
+
+.youtube-player
+    position: relative
+    min-width: 668px
+    height: 494px
+    margin: auto
+    cursor: pointer
+
+.youtube-player img
+    width: 100%
+
+.youtube-player.pristine::before
+    content: ''
+    background: url("../img.svg/play.svg")
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    margin: 0 auto
+    height: 117px
+    width: 117px
+    transition: opacity .2s ease
+
+.youtube-player.pristine:hover::before
+    opacity: .7
+
+.burger
+    position: absolute
+    top: 20px
+    right: 20px
+    display: block
+    cursor: pointer
+    transform: scale(0.6)
+
+    &__icon
+        display: flex
+        flex-direction: column
+        width: 70px
+        cursor: pointer
+
+    &-line
+        background: #fff
+        border-radius: 10px
+        height: 7px
+        margin: 7px 0
+        transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6)
+
+        &.red
+            background: $red
+
+        &:nth-of-type(1)
+            width: 50%
+        &:nth-of-type(2)
+            width: 100%
+        &:nth-of-type(3)
+            width: 75%
+
+input[type="checkbox"]
+    display: none
+
+input[type="checkbox"]:checked ~ .burger-line:nth-of-type(1)
+    transform-origin: bottom
+    transform: rotatez(45deg) translate(8px,0px)
+
+input[type="checkbox"]:checked ~ .burger-line:nth-of-type(2)
+
+    transform-origin: top
+    transform: rotatez(-45deg)
+
+input[type="checkbox"]:checked ~ .burger-line:nth-of-type(3)
+
+    transform-origin: bottom
+    width: 50%
+    transform: translate(30px,-11px) rotatez(45deg)
+
+.main
+    &__container
+        display: flex
+        max-width: 1170px
+
+.filter
+    max-width: 270px
+    width: 100%
+    min-height: 110%
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25)
+    border-radius: 0px 0px 4px 4px
+    padding-bottom: 50px
+    margin-right: 30px
+
+    &__header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        height: 64px
+        background: #F3F3F3
+        padding: 0 13px 0 19px
+
+        &-item
+            font-size: 16px
+            font-family: "HelveticaNeueCyrMedium"
+            letter-spacing: 0.06em
+            color: #595959
+
+            &::after
+                content: ''
+                display: block
+                height: 3px
+                width: 0
+                background: transparent
+                transition: width 0.5s ease, background-color 0.5s ease
+
+            &:hover
+                cursor: pointer
+                &::after
+                    width: 70%
+                    background: $red
+                    border-radius: 10px
+
+    &__radio
+        margin-bottom: 5px
+        display: flex
+        align-items: center
+
+        &:last-child
+            margin-bottom: 0
+
+    &__cat
+        padding: 20px 0
+
+    &__title
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 0 13px 0 19px
+        border-top: 1px solid $white
+        height: 64px
+
+        transition: background-color 0.2s ease
+
+        &.hidden
+            background-color: #f3f3f3
+
+    &__name
+        display: flex
+        font-size: 16px
+        font-family: "HelveticaNeueCyrMedium"
+        letter-spacing: 0.06em
+        color: #595959
+
+    &__prod-form
+        &.hide
+            display: none
+
+.radio-input
+    margin-right: 18px
+
+.price__form
+    display: flex
+    flex-wrap: wrap
+    margin: 0 0 0 17px
+
+    &.hide
+        display: none
+
+.price__input
+    width: 85px
+    height: 21px
+    border: 1px solid rgba(89, 89, 89, 0.1)
+    border-radius: 4px
+    text-align: center
+    letter-spacing: 0.06em
+    color: #8B8B8B
+    margin-right: 3px
+
+    &-wrap
+        &:first-child
+            margin-right: 17px
+
+.price__label
+    color: $red
+    width: 8px
+    height: 11px
+
+.range__slider
+    height: 4px
+    width: 215px
+    background: #f3f3f3
+    position: relative
+    margin-top: 23px
+    margin-bottom: 39px
+
+    .progress
+        height: 100%
+        left: 0%
+        right: 0%
+        position: absolute
+        border-radius: 5px
+        background: $red
+
+.range__input
+    position: relative
+
+    input
+        position: absolute
+        min-width: 215px
+        height: 4px
+        top: 23px
+        left: -215px
+        background: none
+        pointer-events: none
+        -webkit-appearance: none
+        -moz-appearance: none
+        z-index: 1000
+
+input[type="range"]::-webkit-slider-thumb
+    height: 12px
+    width: 12px
+    border-radius: 50%
+    box-sizing: border-box
+    pointer-events: auto
+    -webkit-appearance: none
+    background-color: $red
+    box-shadow: 0px 0px 0px 5px rgba(205, 2, 0, 0.2)
+    cursor: pointer
+
+    transition: box-shadow 0.2s ease
+
+    &:hover
+        box-shadow: 0px 0px 0px 6px rgba(205, 2, 0, 0.2)
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button
+    -webkit-appearance: none
+
+.plus-minus-icon
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 16px
+    height: 16px
+
+    &:hover
+        cursor: pointer
+
+.h-line
+    position: relative
+    content: ""
+    display: flex
+    width: 16px
+    height: 2px
+    background-color: #595959
+
+.v-line
+    position: absolute
+    content: ""
+    display: flex
+    width: 16px
+    height: 2px
+    background-color: #595959
+    transform: rotate(90deg)
+
+    transition: transform 0.5s ease, opacity 0.5s ease
+
+    &.hide
+        transform: rotate(0deg)
+        opacity: 0
+
+        .filter__title
+            background-color: #f3f3f3
+
+.radio
+    display: inline-flex
+    align-items: center
+    cursor: pointer
+    margin-bottom: 8px
+    font-size: 16px
+    font-family: "HelveticaNeueCyr"
+    letter-spacing: 0.06em
+    color: #595959
+
+    &-form
+        margin: 0 0 20px 17px
+        display: flex
+        flex-direction: column
+
+        transition: opacity 0.2s ease, display 0.5s linear
+
+        &--price
+            margin: 0
+
+        &.hide
+            opacity: 0
+            display: none
+
+    &__div
+        width: 22px
+        height: 22px
+        border: 1px solid rgba(89, 89, 89, 0.1)
+        border-radius: 50%
+        margin-right: 18px
+        box-sizing: border-box
+        padding: 4px
+
+        transition: background-color 0.2s ease
+
+        &::after
+            content: ''
+            width: 100%
+            height: 100%
+            display: block
+            background-color: $red
+            border-radius: 50%
+
+            transform: scale(0)
+            transition: transform 0.2s ease
+
+    &__input
+        display: none
+
+        &:checked + .radio__div::after
+            transform: scale(1)
+
+        &:checked + .radio__div
+            background-color: rgba(205, 2, 0, 0.2)
+
+.prod__form
+    margin: 0 0 0 17px
+
+    &.hide
+        display: none
+
+.categories
+    margin-top: 60px
+    width: 100%
+
+    &__header
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        align-items: center
+
+    &__title
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 36px
+        letter-spacing: 0.06em
+        color: #000000
+
+        &::after
+            content: ""
+            width: 173px
+            height: 5px
+            background-color: $red
+            display: block
+            margin-top: 15px
+            border-radius: 30px
+
+    &__main
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-content: stretch
+        min-height: 1870px
+
+    &__products
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+
+    &__pagination
+        display: flex
+        justify-content: center
+        align-items: center
+
+        &-btn
+            width: 41px
+            height: 41px
+            font-size: 24px
+            font-family: "HelveticaNeueCyr"
+            letter-spacing: 0.06em
+            color: $black
+            background: transparent
+            border-radius: 4px
+            margin: 0 5px
+
+            &.active
+                background-color: $red
+                color: $white
+
+            &:last-child
+                margin: 0
+
+            &:hover
+                background: rgba(205, 2, 0, 0.5)
+
+.prev-btn, .next-btn
+    height: 50px
+    width: 50px
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 4px
+    background-color: $dark-grey
+    transition: background-color 0.2s linear
+
+    &:hover
+        background-color: #252525
+
+.prev-btn
+    margin-right: 39px
+
+.next-btn
+    margin-left: 39px
+    transform: rotate(180deg)
+
+.scheme
+    display: flex
+    align-items: center
+
+    &__text
+        font-size: 16px
+        font-family: "HelveticaNeueCyrMedium"
+        color: $red
+        text-decoration: underline
+        max-width: 126px
+        cursor: pointer
+        line-height: 1.2
+
+.bull
+    width: 100px
+    height: 60px
+    margin-left: 18px
+
+.red-arrow
+    width: 22px
+    height: 22px
+    transform: translateY(10px)
+
+.search
+    margin-top: 35px
+    width: 100%
+    display: flex
+    align-items: center
+    margin-bottom: 23px
+    position: relative
+
+    &__input
+        position: relative
+        height: 50px
+        width: 73.33%
+        background-color: #f5f5f5
+        border: 1px solid rgba(0, 0, 0, 0.04)
+        box-sizing: border-box
+        border-radius: 4px 0px 0px 4px
+        padding-left: 75px
+        font-size: 18px
+        font-family: "HelveticaNeueCyrMedium"
+        color: #8B8B8B
+
+        &:focus
+            outline-color: $red
+
+    &__icon
+        position: absolute
+        transform: translateX(20px)
+
+    &__btn
+        display: flex
+        height: 50px
+        align-items: center
+        justify-content: space-between
+        width: 26.64%
+        background-color: $red
+        border: 1px solid rgba(0, 0, 0, 0.05)
+        box-sizing: border-box
+        border-radius: 0px 4px 4px 0px
+        padding: 0 17px 0 24px
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 20px
+        letter-spacing: 0.06em
+        color: $white
+
+        transition: background-color 0.2s linear
+
+        &:hover
+            background-color: $hover-red-btn
+
+.clear__icon
+    position: absolute
+    right: 28%
+    opacity: 0.3
+    cursor: pointer
+
+.ui-autocomplete
+    position: absolute
+    top: 100%
+    left: 0
+    z-index: 1000
+    float: left
+    display: none
+    min-width: 160px
+    padding: 4px 0
+    margin: 0 0 10px 25px
+    list-style: none
+    background-color: #ffffff
+    border-color: #ccc
+    border-color: rgba(0, 0, 0, 0.2)
+    border-style: solid
+    border-width: 1px
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+    -webkit-background-clip: padding-box
+    -moz-background-clip: padding
+    background-clip: padding-box
+    *border-right-width: 2px
+    *border-bottom-width: 2px
+
+    & > li > div
+        padding: 4px 10px
+
+    li.ui-menu-item
+        font-family: "HelveticaNeueCyrMedium"
+        color: $black
+        font-size: 16px
+
+.ui-menu-item > a.ui-corner-all
+    display: block
+    padding: 3px 15px
+    clear: both
+    font-weight: normal
+    line-height: 18px
+    color: #555555
+    white-space: nowrap
+    text-decoration: none
+
+.ui-state-hover, .ui-state-active
+    color: #ffffff
+    text-decoration: none
+    background-color: $red
+    border-radius: 0px
+    -webkit-border-radius: 0px
+    -moz-border-radius: 0px
+    background-image: none
+    cursor: pointer
+
+.modal
+    display: none
+    width: 100%
+    height: 100%
+    overflow: auto
+    background-color: transparent
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1000
+
+    &.show
+        display: flex
+
+    &__dialog
+        width: 95%
+        max-width: 1160px
+        margin: auto
+        position: relative
+        background-color: #fff
+        box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.3)
+        border-radius: 4px
+
+.scheme-img
+    border-radius: 4px
+
+.close-icon
+    position: absolute
+    top: 26px
+    right: 19px
+    cursor: pointer
+
+    transition: transform 0.5s ease
+
+    &:hover
+        transform: rotate(90deg)
+
+.back
+    display: flex
+    align-items: center
+    font-family: "HelveticaNeueCyr"
+    font-size: 16px
+    letter-spacing: 0.06em
+    color: $black
+    margin-bottom: 21px
+    width: 190px
+    text-decoration: none
+
+    &:hover
+        cursor: pointer
+        color: $black
+        text-decoration: underline
+
+.go-back
+    transform: rotate(180deg)
+    height: 32px
+    width: 32px
+    margin-right: 18px
+
+.info
+    margin-top: 12px
+    margin-bottom: 69px
+
+    &__container
+        max-width: 1170px
+
+.product
+    &__block
+        background: $white
+        box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25)
+        border-radius: 20px
+        overflow: hidden
+        display: flex
+        height: 500px
+        width: 100%
+
+    &__img
+        height: 100%
+        width: 50%
+
+    &__info
+        padding: 51px 70px 62px 29px
+
+    &__title
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 28px
+        letter-spacing: 0.06em
+        color: $black
+
+        &::after
+            content: ""
+            width: 125px
+            height: 5px
+            background-color: $red
+            display: block
+            margin-top: 15px
+            border-radius: 30px
+
+    &__price
+        font-family: "HelveticaNeueCyrBold"
+        font-size: 32px
+        letter-spacing: 0.06em
+        color: $red
+        margin-top: 30px
+
+    &__description
+        font-family: "HelveticaNeueCyr"
+        font-size: 17px
+        line-height: 26px
+        letter-spacing: 0.06em
+        color: $grey
+        margin-top: 30px
+
+    &__btn
+        background: $red
+        box-shadow: 0px 2px 7px rgba(232, 8, 6, 0.3)
+        border-radius: 12px
+        color: $white
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 18px
+        letter-spacing: 0.06em
+        width: 270px
+        height: 50px
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-top: 32px
+
+        transition: background-color 0.2s linear
+
+        &:hover
+            background-color: $hover-red-btn
+
+.currency
+    font-family: "HelveticaNeueCyrBold"
+    font-style: italic
+    font-size: 18px
+    letter-spacing: 0.06em
+    color: #262626
+
+.aditional
+    margin-bottom: 92px
+
+    &__container
+        display: flex
+        max-width: 1170px
+
+    &__useful
+        width: 58%
+        height: 715px
+        background: $white
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25)
+        border-radius: 20px
+        padding: 57px 49px 130px 47px
+        margin-right: 30px
+
+        &-title
+            font-family: "HelveticaNeueCyrMedium"
+            font-size: 24px
+            letter-spacing: 0.06em
+            color: $black
+            margin-bottom: 30px
+
+        &-text
+            font-family: "HelveticaNeueCyr"
+            font-size: 20px
+            letter-spacing: 0.04em
+            color: $black
+            line-height: 27px
+
+    &__reviews
+        width: 42%
+        height: 715px
+        background: #FFFFFF
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25)
+        border-radius: 20px
+        padding: 57px 47px 79px 49px
+
+        &-title
+            font-family: "HelveticaNeueCyrMedium"
+            font-size: 24px
+            letter-spacing: 0.06em
+            color: $black
+            margin-bottom: 25px
+
+.reviews
+
+    &__item
+        display: flex
+        flex-wrap: wrap
+        padding: 30px 0
+        border-top: 1px solid rgba(0, 0, 0, 0.28)
+
+        &:last-child
+            border-bottom: 1px solid rgba(0, 0, 0, 0.28)
+
+    &__img
+        width: 80px
+        height: 80px
+        margin-right: 20px
+        border-radius: 50%
+        filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.25))
+
+    &__info
+        display: flex
+        flex-wrap: wrap
+        width: 70%
+
+    &__name
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 20px
+        letter-spacing: 0.06em
+        color: $black
+        margin-bottom: 10px
+        height: 30px
+
+    &__text
+        font-family: "HelveticaNeueCyr"
+        font-size: 14px
+        line-height: 19px
+        letter-spacing: 0.03em
+        color: $black
+
+.more
+    &__container
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        max-width: 1170px
+
+.cart
+    margin-top: 12px
+    margin-bottom: 121px
+
+    &__container
+        max-width: 1170px
+
+    &__block
+        padding: 60px 70px 72px 45px
+        background: $white
+        box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25)
+        border-radius: 20px
+        position: relative
+
+    &__item
+        display: flex
+        align-items: center
+        position: relative
+        padding: 50px 0
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.1)
+
+        &:first-child
+            padding-top: 0
+
+        &-main
+            display: flex
+
+        &-delete
+            cursor: pointer
+            transition: transform 0.5s ease
+            margin-right: 32px
+
+            &:hover
+                transform: rotate(90deg)
+
+        &-img
+            margin-right: 29px
+            border-radius: 10px
+            height: 245px
+            width: 270px
+
+        &-info
+            margin-top: 24px
+
+        &-title
+            font-size: 26px
+            font-family: "HelveticaNeueCyrMedium"
+            letter-spacing: 0.06em
+            color: $black
+            width: 260px
+
+            &::after
+                content: ""
+                width: 125px
+                height: 5px
+                background-color: $red
+                display: block
+                margin-top: 10px
+                border-radius: 30px
+
+        &-price
+            font-family: "HelveticaNeueCyrBold"
+            font-size: 32px
+            letter-spacing: 0.06em
+            color: $red
+            margin-top: 24px
+
+        &-sum
+            font-family: "HelveticaNeueCyrBold"
+            font-size: 26px
+            line-height: 26px
+            letter-spacing: 0.06em
+            color: $black
+            min-width: 160px
+            text-align: right
+
+        &-wrap
+            display: flex
+            align-items: center
+            width: 100%
+            justify-content: space-between
+
+    &__footer
+        display: flex
+        justify-content: space-between
+
+.sum-title
+    position: absolute
+    top: 61px
+    right: 70px
+    font-family: "HelveticaNeueCyr"
+    font-size: 24px
+    letter-spacing: 0.06em
+    color: $black
+    opacity: 0.7
+
+.v-counter
+    display: flex
+    align-items: center
+
+.count-wrap
+    margin: 0 20px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.count
+    width: 68px
+    height: 68px
+    background: $white
+    border: 1px solid rgba(0, 0, 0, 0.5)
+    box-sizing: border-box
+    border-radius: 4px
+    font-family: "HelveticaNeueCyrMedium"
+    font-size: 30px
+    letter-spacing: 0.06em
+    color: $black
+    text-align: center
+    position: relative
+
+.kg
+    font-size: 18px
+    font-family: "HelveticaNeueCyrMedium"
+    font-style: italic
+    color: #262626
+    position: absolute
+    transform: translateY(70px)
+
+.minusBtn
+    background-color: $black
+    border: none
+    width: 20px
+    height: 2px
+
+.plusBtn
+    background-color: $black
+    border: none
+    width: 20px
+    height: 2px
+
+    &::after
+        content: ""
+        width: 20px
+        height: 2px
+        background-color: $black
+        display: block
+        transform: rotate(90deg)
+
+.continue-shopping
+    font-family: "HelveticaNeueCyrMedium"
+    font-size: 18px
+    letter-spacing: 0.06em
+    color: $white
+    background: #7F7F7F
+    border-radius: 12px
+    width: 270px
+    height: 50px
+    margin-top: 94px
+
+    transition: background-color 0.2s linear
+
+    &:hover
+        background-color: $dark-grey
+
+.total
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    width: 374px
+    height: 183px
+    background-color: #333333
+    padding: 10px 23px 43px 45px
+
+    &__info
+        display: flex
+        justify-content: space-between
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 26px
+        letter-spacing: 0.06em
+        color: $white
+        width: 100%
+        height: 40px
+
+    &__buy
+        background: $red
+        box-shadow: 0px 2px 7px rgba(232, 8, 6, 0.3)
+        border-radius: 12px
+        color: $white
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 18px
+        letter-spacing: 0.06em
+        width: 299px
+        height: 50px
+
+        transition: background-color 0.2s linear
+
+        &:hover
+            background-color: $hover-red-btn
+
+.also
+    &__container
+        max-width: 1170px
+
+    &__title
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 32px
+        letter-spacing: 0.06em
+        color: $black
+        margin-bottom: 56px
+
+        &::after
+            content: ""
+            width: 125px
+            height: 5px
+            background-color: $red
+            display: block
+            margin-top: 20px
+            border-radius: 30px
+
+    &__products
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+
+.about
+    margin-top: 12px
+    margin-bottom: 126px
+
+    &__container
+        max-width: 1170px
+
+    &__wrapper
+        display: flex
+        align-items: center
+
+    &__img
+        width: 570px
+        height: 500px
+        border-radius: 20px
+        box-shadow: 0px 0px 40px rgb(0 0 0 / 0.4)
+        margin-right: 54px
+
+    &__title
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 28px
+        letter-spacing: 0.06em
+        color: #333333
+        margin-bottom: 44px
+
+        &::after
+            content: ""
+            width: 94px
+            height: 5px
+            background-color: $red
+            display: block
+            margin-top: 19px
+            border-radius: 30px
+
+        .bold
+            font-family: "HelveticaNeueCyrBold"
+            color: $black
+
+    &__text
+        font-family: "HelveticaNeueCyr"
+        font-size: 18px
+        letter-spacing: 0.06em
+
+        color: $grey
+
+.mission
+    margin-bottom: 80px
+
+    &__container
+        max-width: 1170px
+
+    &__title
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 33px
+
+        &-text
+            font-family: "HelveticaNeueCyrMedium"
+            font-size: 24px
+            letter-spacing: 0.06em
+            color: $black
+
+        &-line
+            content: ""
+            background-color: #E0E0E0
+            width: 83%
+            height: 1px
+
+    &__text
+        font-family: "HelveticaNeueCyr"
+        font-size: 20px
+        letter-spacing: 0.06em
+        color: $black
+
+        .bold
+            font-family: "HelveticaNeueCyrMedium"
+            color: $black
+
+.fresh
+    margin-bottom: 132px
+
+    &__container
+        max-width: 1170px
+
+    &__title
+        font-family: "HelveticaNeueCyrBold"
+        font-size: 28px
+        letter-spacing: 0.06em
+        color: #333333
+        text-align: center
+        margin-bottom: 144px
+
+        &::after
+            content: ""
+            width: 94px
+            height: 5px
+            background-color: $red
+            display: block
+            margin: 19px auto 0
+            border-radius: 30px
+
+    &__slider
+        display: flex
+        justify-content: center
+        position: relative
+
+        &-content
+            min-width: 0
+
+        &-slide
+            display: flex
+            justify-content: center
+            width: 1146px
+            border-radius: 20px
+
+        &-img
+            border-radius: 20px
+
+        .prev-btn,.next-btn
+            margin: 0
+            position: absolute
+            z-index: 10000
+            top: 50%
+
+            &:hover
+                background-color: $red
+
+        .prev-btn
+            left: 33px
+
+        .next-btn
+            right: 33px
+
+.delivery
+    margin-top: 12px
+    margin-bottom: 66px
+
+    &__container
+        max-width: 1170px
+
+    &__description
+        display: flex
+        align-items: center
+
+    &__img
+        min-width: 600px
+        min-height: 500px
+        background: $white
+        box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25)
+        border-radius: 20px
+        overflow: hidden
+        z-index: 100
+
+    &__info
+        background: #F5F5F5
+        border-radius: 20px
+        height: 444px
+        padding: 54px
+
+    &__title
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 28px
+        letter-spacing: 0.06em
+        color: $black
+        margin-bottom: 35px
+
+        .bold
+            font-family: "HelveticaNeueCyrBold"
+            color: $black
+
+        &::after
+            content: ""
+            width: 94px
+            height: 5px
+            background-color: $red
+            display: block
+            margin-top: 19px
+            border-radius: 30px
+
+    &__text
+        font-family: "HelveticaNeueCyr"
+        font-size: 18px
+        letter-spacing: 0.04em
+        line-height: 26px
+        color: $dark-grey
+
+.conditions
+    margin-bottom: 125px
+
+    &__container
+        max-width: 1170px
+
+    &__title
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 25px
+
+        &-text
+            font-family: "HelveticaNeueCyrMedium"
+            font-size: 24px
+            letter-spacing: 0.06em
+            color: $black
+
+        &-line
+            content: ""
+            background-color: #E0E0E0
+            width: 78%
+            height: 1px
+
+    &__text
+        font-family: "HelveticaNeueCyr"
+        font-size: 20px
+        letter-spacing: 0.03em
+        color: $black
+
+        .bold
+            font-family: "HelveticaNeueCyrMedium"
+            color: $black
+
+.geography
+    margin-bottom: 82px
+
+    &__container
+        max-width: 1170px
+        display: flex
+        align-items: center
+
+    &__info
+        background: #F5F5F5
+        border-radius: 20px 0 0 20px
+        height: 444px
+        padding: 101px 65px 100px 75px
+
+    &__img
+        min-width: 570px
+        max-height: 500px
+        border-radius: 20px
+        overflow: hidden
+        filter: drop-shadow(10px 10px 50px rgba(0, 0, 0, 0.08))
+        z-index: 100
+
+    &__map
+        transform: scale(1.1)
+
+    &__title
+        font-family: "HelveticaNeueCyrMedium"
+        font-size: 28px
+        letter-spacing: 0.06em
+        color: $black
+        margin-bottom: 38px
+
+        &::after
+            content: ""
+            width: 94px
+            height: 5px
+            background-color: $red
+            display: block
+            margin-top: 19px
+            border-radius: 30px
+
+    &__text
+        font-family: "HelveticaNeueCyr"
+        font-size: 18px
+        line-height: 26px
+        letter-spacing: 0.02em
+        color: $dark-grey
+
+.terms
+    margin-bottom: 180px
+
+    &__container
+        max-width: 1170px
+
+    &__title
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 30px
+
+        &-text
+            font-family: "HelveticaNeueCyrMedium"
+            font-size: 24px
+            letter-spacing: 0.06em
+            color: $black
+
+        &-line
+            content: ""
+            background-color: #E0E0E0
+            width: 75%
+            height: 1px
+
+    &__text
+        font-family: "HelveticaNeueCyr"
+        font-size: 20px
+        letter-spacing: 0.04em
+        color: $black
+
+//---------------Media-------------
+
+@import "media.sass"
