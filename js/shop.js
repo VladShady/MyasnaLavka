@@ -114,7 +114,6 @@ function PaginationButton(page, items) {
 
 function Filter(nameOfInput) {
     let selected = document.querySelector(`input[name='${nameOfInput}']:checked`).value;
-    console.log(selected);
     let arrOfSelected;
 
     if (nameOfInput == "kind") {
